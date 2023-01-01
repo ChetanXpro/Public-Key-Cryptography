@@ -29,11 +29,11 @@ app.get("/balance/:address", (req, res) => {
 
 app.post("/send", (req, res) => {
   const { sender, signature, recipient, amount, recoveryKey } = req.body;
-  console.log(amount)
+  
 
  
   let stringAmount = amount.toString();
-  console.log(stringAmount);
+ 
   function hashMessage() {
     return keccak256(
       utf8ToBytes(
@@ -54,14 +54,14 @@ app.post("/send", (req, res) => {
   );
 
   const isValidData = secp.verify(signature, hashdata, PublicKeyRecover);
-  console.log(isValidData);
+ 
 
   if (isValidData) {
     setInitialBalance(sender);
     setInitialBalance(recipient);
     let amountt = parseInt(amount);
-    console.log(balances[sender])
-    console.log(amount)
+   
+
     if (balances[sender] < amountt) {
       res.status(400).send({ message: "Not enough funds!" });
     } else {

@@ -42,8 +42,7 @@ function Transfer({ privateKey, publicKey, setBalance }) {
         signature[1]
       )
     );
-    console.log(PublicKeyRecover);
-    console.log(sendAmount);
+  
     try {
       const {
         data: { balance },
