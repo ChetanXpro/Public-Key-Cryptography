@@ -2,8 +2,7 @@ import { useState } from "react";
 import server from "./server";
 import * as secp from "ethereum-cryptography/secp256k1";
 import {
-  bytesToHex,
-  bytesToUtf8,
+
   toHex,
   utf8ToBytes,
 } from "ethereum-cryptography/utils";
@@ -18,7 +17,7 @@ function Transfer({ privateKey, publicKey, setBalance }) {
 
   async function transfer(evt) {
     evt.preventDefault();
-    let id = 0;
+    
     function hashMessage() {
       return keccak256(
         utf8ToBytes(
@@ -30,7 +29,7 @@ function Transfer({ privateKey, publicKey, setBalance }) {
         )
       );
     }
-    console.log(id);
+ 
 
     const signature = await secp.sign(hashMessage(), privateKey, {
       recovered: true,

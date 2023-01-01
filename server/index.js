@@ -41,7 +41,7 @@ app.post("/send", (req, res) => {
           sender,
           recipient,
           amount: stringAmount,
-          id: trx[sender],
+
         })
       )
     );

@@ -14,8 +14,7 @@ function Wallet({
 }) {
   async function onChange(evt) {
     const privateKeyw = evt.target.value;
-    // const bytes = utf8ToBytes("Vote Yes on Proposal 327");
-    // let pubicKeyFromPrivateKey;
+  
   
   const  pubicKeyFromPrivateKey = toHex(secp.getPublicKey(privateKeyw));
   
