@@ -35,13 +35,7 @@ function Transfer({ privateKey, publicKey, setBalance }) {
       recovered: true,
     });
 
-    const PublicKeyRecover = toHex(
-      secp.recoverPublicKey(
-        toHex(hashMessage()),
-        toHex(signature[0]),
-        signature[1]
-      )
-    );
+
   
     try {
       const {
